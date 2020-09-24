@@ -1,0 +1,40 @@
+.title {
+    width: 500px;
+}
+
+.searchbox {
+    display: block;
+    padding-left: 20px;
+    grid-area: search;
+    height: 40px;
+    width: 50%;
+    align-self: center;
+    justify-self: center;
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    border-radius: 30px;
+    box-sizing: border-box;
+    position: relative;
+    top: 20px;
+}
+
+.searchbox:hover {
+    box-shadow: 1px 1px 5px grey;
+}
+
+.searchbox:focus {
+    outline: none;
+    box-shadow: 1px 1px 5px grey;
+
+}
+
+#searchengine {
+    display: block;
+    position: relative;
+}
+
+.searchbutton {
+    position: relative;
+    top: -14px;
+    left: 27.5%;
+    background: url(Assets/favicon.png);
+}
