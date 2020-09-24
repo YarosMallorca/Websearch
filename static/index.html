@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Websearch</title>
+    <meta name="description" content="Websearch">
+    <link rel="icon" type="png" href="Assets/favicon.ico">
+    <script src="eel.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <center>
+    <img class="title" src="Assets/title.png" alt="title" </img>
+    <select id="searchengine">
+        <option value="Google">Google</option>
+        <option value="YouTube">YouTube</option>
+        <option value="Amazon">Amazon</option>
+        <option value="Wikipedia">Wikipedia</option>
+    </select>
+    <input class="searchbox" id="searchbox" type="text" placeholder="Search" required="" value="">
+
+    <input type="image" class="searchbutton" id="searchbutton" src="Assets/favicon.png" width="35" height="35">
+    
+    </center>
+
+    <script>
+    async function start_search() {
+    let query = document.getElementById('searchbox').value;
+    let engine = document.getElementById('searchengine').value;
+    await eel.search(query, engine)();
+    }
+    jQuery('.searchbutton').on('click', function() {
+        start_search();
+    });
+
+    var input = document.getElementById("searchbox");
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+            start_search();
+        }
+    });
+    </script>
+
+</body>
+</html>
